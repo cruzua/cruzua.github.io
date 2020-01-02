@@ -1,0 +1,75 @@
+/* -- кнопака вибору мови на bootstrap-4.4.1 -------------------------------- */
+#navbar-hide {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0 0;
+  background-color: rgba(0, 0, 0, 0.25);
+/*  line-height: 1; */
+}
+#navbar-hide a,
+#navbar-hide .strilka-r {
+  color: rgba(255, 255, 255, 0.75);
+  padding: 0.25rem;
+}
+
+#navbar-hide a:hover,
+#navbar-hide .strilka-r:hover {
+  color: #a1d9ef;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 0.25em;
+}
+
+#navbar-hide .strilka-r {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.25em;
+}
+
+#btn-ua-r.dropdown:hover .dropdown-content-r {
+  display: inline-block;
+  display: flex !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 0.25em;
+}
+
+#navbar-hide img {
+  height: calc(11em / 16);
+  vertical-align: baseline;
+}
+
+#navbar-hide .navbar-toggler {
+  font-size: 1em;
+  line-height: 1;
+  padding: 0rem 0.75rem;
+}
+
+#btn-ua-r.dropdown .strilka-r::after {
+  vertical-align: 0;
+}
+
+#btn-ua-r.dropdown .strilka-r::after {
+  display: inline-block;
+  margin-left: 0.25em;
+  vertical-align: 0.07em;
+  content: "";
+  border-top: 0.3em solid transparent;
+  border-right: 0;
+  border-bottom: 0.3em solid transparent;
+  border-left: 0.3em solid;
+}
+
+#navbar-hide .dropdown-content-r {
+  display: none;
+  -position: absolute;
+  right: auto;
+  left: 100%;
+  min-width: calc(3 * 11em/16 + 6ch);
+  /*  margin-left: 0.125rem; */
+  z-index: 1969;
+}
+
+#btn-ua-r .btn {
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
