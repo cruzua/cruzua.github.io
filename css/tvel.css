@@ -53,7 +53,7 @@ container {
 
 
 /* -- # ALL sections -------------------------------------------------------- */
-#about, #brends, #call-to-action, #team, #contact {
+#about, #brends, #call-to-action, #team, #contact, #geli_tvel, #geli_ultragel, #tape # {
   padding-top: 4.5rem;
   margin-bottom: 2.5rem;
 }
@@ -135,10 +135,7 @@ container {
 
 #navbar-main .dropdown-item:hover,
 #navbar-main .dropdown-item:focus,
-#navbar-main .form-control {
-  color: rgba(0,255,255,.9);
-  background-color: rgba(0,0,0,.25);
-}
+#navbar-main .form-control { color: rgba(0,255,255,.9);  background-color: rgba(0,0,0,.25); }
 
 /* -- # FullScrCarousel ----------------------------------------------------- */
 #FullScrCarousel {
@@ -254,6 +251,76 @@ container {
   padding-bottom: .3rem;
 }
 
+/* -- # roduct -------------------------------------------------------------- */
+/*<!-- Collapse accordion -->*/
+#accordion-a {
+  font-size: 1rem;
+  width: 100%;
+  align-self: center;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, .075) !important;
+/*  background-color: red;
+  background-clip: border-box;
+  border: 1px solid rgba(126, 126, 126, 0.75);
+  border-radius: 0.25rem;
+  padding: 0.25rem;*/
+}
+
+#accordion-a .card {
+  background-color: #fff;
+  background-clip: border-box;
+  -border: 1px solid rgba(126, 126, 126, 0.75);
+  -border-radius: 0.25rem;
+}
+#accordion-a .card-header {
+  background-color: #BBDEFB;
+  color: inherit;
+  margin-bottom: 0;
+  padding: 0.25rem 0.25rem;
+}
+
+#accordion-a .btn-link {
+  color: #1976D2;
+  font-weight: 700;
+/*  padding: 0px; */
+}
+
+#accordion-a .card-body {
+  font-size: 1em;
+  text-align: justify;
+  text-justify: auto;
+  padding: .5em 1em;
+}
+
+#accordion-a p {
+  text-indent: 1em;
+  padding: 0;
+  margin: .25em;
+}
+
+#accordion-a li {
+  padding: 0 0 0 0em;
+  margin: ;
+}
+
+#product .btn-get-started {
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  display: inline-block;
+  padding: .25rem 1rem;
+  border-radius: .25rem;
+  transition: 0.5s;
+  margin: 1rem;
+  color: #BBDEFB;
+  background: #1976D2;
+}
+
+#product .btn-get-started:hover {
+  background: #BBDEFB;
+  color: #1976D2;
+}
+
 
 /* -- # brends -------------------------------------------------------------- */
 #brends {
@@ -308,6 +375,68 @@ color: #2196F3;
   background: #fff;
   border: 3px solid #2196F3;
 }
+
+/* Our Portfolio Section -----------------------------------------------------*/
+
+#portfolio {
+  background: #fff;
+  padding: 90px 0;
+}
+
+#portfolio .portfolio-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: all ease-in-out 0.4s;
+}
+
+#portfolio .portfolio-item {
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#portfolio .portfolio-item h2 {
+  color: #ffffff;
+  font-size: 24px;
+  margin: 0;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+#portfolio .portfolio-item img {
+  transition: all ease-in-out 0.4s;
+  width: 100%;
+}
+
+#portfolio .portfolio-item:hover img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+#portfolio .portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#portfolio .portfolio-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+
+
 
 
 /*-- Our Team Section --------------------------------------------------------*/
@@ -550,25 +679,25 @@ color: #2196F3;
 
 /* -- # Back to top button -------------------------------------------------- */
 .back-to-top {
-  background: #1976D2;
-  border-radius: .125rem;
-  bottom: 1rem;
-  right: 1rem;
+  background: #BEE3ED;
+  border-radius: 2px;
+  bottom: 15px;
   color: #fff;
   display: none;
-  font-size: 1rem;
-  padding: .5rem;
+  font-size: 16px;
+  padding: 6px 12px 9px 12px;
   position: fixed;
+  right: 15px;
   transition: background 0.5s;
 }
 
 .back-to-top:focus {
-  background: #d0ecf7;
-  color: #2aa9db;
+  background: #50d8af;
+  color: #fff;
   outline: none;
 }
 
 .back-to-top:hover {
-  background: #1976D2;
+  background: #0c2e8a;
   color: #fff;
 }
