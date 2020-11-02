@@ -49,6 +49,6 @@ var baseMapsMix = {
     "Супутник": MapBoxSatellite,
 //    "Outdoors": MapBoxOutdoors,
     "TF Pioneer": ThunderforestPioneer,
-    "Водяні фарби": watercolor,
+    "Акварель": watercolor,
     "Топографічна": opentopomap
     };
