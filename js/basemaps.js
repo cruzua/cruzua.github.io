@@ -39,7 +39,9 @@ var baseMapsMapBox = {
 // набір карт різні
 var
   	opentopomap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {attribution: 'Kartendaten: © <a href="https://openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende, SRTM | Kartendarstellung: © <a href="http://opentopomap.org/">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'}),
-  	m4UMaps = L.tileLayer('https://tileserver.4umaps.com/{z}/{x}/{y}.png', {attribution: '(C) 4UMaps.com <a href="https://4umaps.com/" target="_parent">4UMaps</a> Data CC-By-SA by OpenStreetMap', maxZoom: 15});
+  	m4UMaps = L.tileLayer('https://tileserver.4umaps.com/{z}/{x}/{y}.png', {attribution: '(C) 4UMaps.com <a href="https://4umaps.com/" target="_parent">4UMaps</a> Data CC-By-SA by OpenStreetMap', maxZoom: 15}),
+    watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', { attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>', subdomains: 'abcd', minZoom: 1, maxZoom: 16, ext: 'png'});
+
 
 // набір карт MIX
 var baseMapsMix = {
@@ -47,5 +49,6 @@ var baseMapsMix = {
     "Супутник": MapBoxSatellite,
 //    "Outdoors": MapBoxOutdoors,
     "TF Pioneer": ThunderforestPioneer,
+    "Водяні фарби": watercolor,
     "Топографічна": opentopomap
     };
