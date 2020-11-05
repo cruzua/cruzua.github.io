@@ -8,7 +8,7 @@ L.geoJson(polygon_1709, {style: style_gub,}).addTo(fortress).bindPopup( function
 
 
 function styleIcons(feature) {
-				 return {icon: L.icon({iconUrl: 'https://cruzua.github.io/svg/' + feature.properties.poi_group + '.svg', iconSize: [32, 32]}),}
+				 return {icon: L.icon({iconUrl: 'https://cruzua.github.io/svg/h71_green.svg', iconSize: [32, 32]}),}
 			 	 };
 
 // function styleDivIcons(feature) {
