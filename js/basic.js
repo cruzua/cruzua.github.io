@@ -33,13 +33,13 @@ var events_1709 = L.geoJson(event_1709, {
 				}, onEachFeature: popPlaces
 		});
 
-var title = new L.Control({position: 'topleft'});
-		title.onAdd = function(map) {
-					this._div = L.DomUtil.create("div", "info");
-					this.update(); return this._div; };
-		title.update = function() {
-					this._div.innerHTML = '<div class="d-inline-flex"> <nav class="navbar navbar-expand-lg navbar-light navbar-title bg-light2"> <button class="navbar-toggler toggler-title" type="button" data-toggle="collapse" data-target="#TogglerTitle" aria-controls="TogglerTitle" aria-expanded="false" aria-label="Toggle navigation"> <i class="fa fa-map-marker-alt"></i> </button> <div class="collapse navbar-collapse" id="TogglerTitle"> Шляхами союзної армії Шведського короля Карла ХІІ та Гетьмана України Івана Мазепи: від Гадяча до Переволочної </div> </nav></div>';
-					};
+//var title = new L.Control({position: 'topleft'});
+//		title.onAdd = function(map) {
+//					this._div = L.DomUtil.create("div", "info");
+//					this.update(); return this._div; };
+//		title.update = function() {
+//					this._div.innerHTML = '<div class="d-inline-flex"> <nav class="navbar navbar-expand-lg navbar-light navbar-title bg-light2"> <button class="navbar-toggler toggler-title" type="button" data-toggle="collapse" data-target="#TogglerTitle" aria-controls="TogglerTitle" aria-expanded="false" aria-label="Toggle navigation"> <i class="fa fa-map-marker-alt"></i> </button> <div class="collapse navbar-collapse" id="TogglerTitle"> Шляхами союзної армії Шведського короля Карла ХІІ та Гетьмана України Івана Мазепи: від Гадяча до Переволочної </div> </nav></div>';
+//					};
 
 var btnInfo = new L.Control({position: 'bottomleft'});
 		btnInfo.onAdd = function(map) {
