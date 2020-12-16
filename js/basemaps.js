@@ -36,6 +36,10 @@ var baseMapsMapBox = {
     "Outdoors": MapBoxOutdoors
     };
 
+// OpenStreetMap
+var osm = L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '© OpenStreetMap contributors'}),
+    osmBw = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {attribution: '© OpenStreetMap contributors'});
+
 // набір карт різні
 var
     uatopomap = L.tileLayer('https://dgm.gki.com.ua/map/rtile/carto_2012332222387848919/ua/{z}/{x}/{y}.png', {attribution: '2020 <a href="http://www.velopoltava.org">ГО «ВелоПолтава»</a> | Maps © <a href="https://gki.com.ua/">Науково-дослідний інститут геодезії і картографії</a> CC-BY-SA</a>)'}),
