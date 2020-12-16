@@ -39,11 +39,11 @@ var baseMapsMapBox = {
 // OpenStreetMap
 var osm = L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '© OpenStreetMap contributors'}),
     osmBw = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {attribution: '© OpenStreetMap contributors'}),
-    hikebike = L.tileLayer('http://toolserver.org/tiles/hikebike/{z}/{x}/{y}.png', {attribution: '2020 <a href="http://www.velopoltava.org">ГО «ВелоПолтава»</a> | Maps © <a href="">Hike Bike</a> CC-BY-SA</a>)'});
+    hikebike = L.tileLayer('http://toolserver.org/tiles/hikebike/{z}/{x}/{y}.png', {attribution: '2020 <a href="http://www.velopoltava.org">ГО «ВелоПолтава»</a> | Maps © <a href="">Hike Bike</a> CC-BY-SA</a>'});
 
 // набір карт різні
 var
-    uatopomap = L.tileLayer('https://dgm.gki.com.ua/map/rtile/carto_2012332222387848919/ua/{z}/{x}/{y}.png', {attribution: '2020 <a href="http://www.velopoltava.org">ГО «ВелоПолтава»</a> | Maps © <a href="https://gki.com.ua/">Науково-дослідний інститут геодезії і картографії</a> CC-BY-SA</a>)'}),
+    uatopomap = L.tileLayer('https://dgm.gki.com.ua/map/rtile/carto_2012332222387848919/ua/{z}/{x}/{y}.png', {attribution: '2020 <a href="http://www.velopoltava.org">ГО «ВелоПолтава»</a> | Maps © <a href="https://gki.com.ua/">Науково-дослідний інститут геодезії і картографії</a> CC-BY-SA</a>'}),
     opentopomap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {attribution: '2020 <a href="http://www.velopoltava.org">ГО «ВелоПолтава»</a> | Kartendaten: © <a href="https://openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende, SRTM | Kartendarstellung: © <a href="http://opentopomap.org/">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'}),
     m4UMaps = L.tileLayer('https://tileserver.4umaps.com/{z}/{x}/{y}.png', {attribution: '2020 <a href="http://www.velopoltava.org">ГО «ВелоПолтава»</a> | © 4UMaps.com <a href="https://4umaps.com/" target="_parent">4UMaps</a> Data CC-By-SA by OpenStreetMap', maxZoom: 15}),
     watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', { attribution: '2020 <a href="http://www.velopoltava.org">ГО «ВелоПолтава»</a> | Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> | Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>', subdomains: 'abcd', minZoom: 1, maxZoom: 16, ext: 'png'});
