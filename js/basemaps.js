@@ -39,6 +39,7 @@ var baseMapsMapBox = {
 // OpenStreetMap
 var osm = L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '© OpenStreetMap contributors'}),
     osmBw = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {attribution: '© OpenStreetMap contributors'}),
+    osmGPS = L.tileLayer('https://{s}.gps-tile.openstreetmap.org/lines/{z}/{x}/{y}.png', {attribution: '<a href="https://www.openstreetmap.org/#&layers=G">' + 'OpenStreetMap public GPS traces</a>'}),
     hikebike = L.tileLayer('http://toolserver.org/tiles/hikebike/{z}/{x}/{y}.png', {attribution: '2020 <a href="http://www.velopoltava.org">ГО «ВелоПолтава»</a> | Maps © <a href="">Hike Bike</a> CC-BY-SA</a>'});
 
 // набір карт різні
