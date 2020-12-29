@@ -40,10 +40,10 @@ var baseMapsMapBox = {
 var VisicomUrl = 'https://tms{s}.visicom.ua/2.0.0/{map}/{style}/{z}/{x}/{y}.png',
     VisicomAttr = '2020 <a href="http://www.velopoltava.org">ГО «ВелоПолтава»</a> | Картографічні дані © 2020 «<a href="https://api.visicom.ua/">АТ Візіком</a>»';
 
-var VisicomBaseUA = L.tileLayer(VisicomUrl, {map: 'world,ua', style: 'base', attribution: VisicomAttr}),
-    VisicomUAwb = L.tileLayer(VisicomUrl, {map: 'world,ua', style: 'print', attribution: VisicomAttr}),
-    VisicomUAbg = L.tileLayer(VisicomUrl, {map: 'world,ua', style: 'base_background', attribution: VisicomAttr}), // без підписів
-    VisicomUAsing = L.tileLayer(VisicomUrl, {map: 'world,ua', style: 'base_sign', attribution: VisicomAttr}); // підписи
+var VisicomBaseUA = L.tileLayer(VisicomUrl, {map: 'world,ua', style: 'base', attribution: VisicomAttr, subdomains: "123", maxZoom: 19, tms: true}),
+    VisicomUAwb = L.tileLayer(VisicomUrl, {map: 'world,ua', style: 'print', attribution: VisicomAttr, subdomains: "123", maxZoom: 19, tms: true}),
+    VisicomUAbg = L.tileLayer(VisicomUrl, {map: 'world,ua', style: 'base_background', attribution: VisicomAttr, subdomains: "123", maxZoom: 19, tms: true}), // без підписів
+    VisicomUAsing = L.tileLayer(VisicomUrl, {map: 'world,ua', style: 'base_sign', attribution: VisicomAttr, subdomains: "123", maxZoom: 19, tms: true}); // підписи
 
 // OpenStreetMap
 var osm = L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '© OpenStreetMap contributors'}),
