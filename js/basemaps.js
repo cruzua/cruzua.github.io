@@ -36,6 +36,14 @@ var baseMapsMapBox = {
     "Outdoors": MapBoxOutdoors
     };
 
+// набір карт www.visicom.ua
+var VisicomUrl = 'https://tms{s}.visicom.ua/2.0.0/{map}/{style}/{z}/{x}/{y}.png',
+    VisicomAttr = '2020 <a href="http://www.velopoltava.org">ГО «ВелоПолтава»</a> | Картографічні дані © 2020 «<a href="https://api.visicom.ua/">АТ Візіком</a>»';
+
+var VisicomBaseUA = L.tileLayer(VisicomUrl, {map: 'world,ua', style: 'base', attribution: MapBoxAttr}),
+    VisicomUAwb = L.tileLayer(VisicomUrl, {map: 'world,ua', style: 'print', attribution: MapBoxAttr}),
+    VisicomUAbg = L.tileLayer(VisicomUrl, {map: 'world,ua', style: 'base_background', attribution: MapBoxAttr}), // без підписів
+    VisicomUAsing = L.tileLayer(VisicomUrl, {map: 'world,ua', style: 'base_sign', attribution: MapBoxAttr}); // підписи
 
 // OpenStreetMap
 var osm = L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '© OpenStreetMap contributors'}),
