@@ -19,8 +19,8 @@
             spaceSymbol: ' ',
             selectorBack: false,
             namedToggle: false,
-            collapseAll: '0',
-            expandAll: '1',
+            collapseAll: '',
+            expandAll: '',
             labelIsSelector: 'both',
         },
 
