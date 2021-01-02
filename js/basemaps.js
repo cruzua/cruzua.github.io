@@ -73,9 +73,9 @@ var baseTree = {
     {
       label: "<b>Україна</b>",
       children: [
-        { label: "Мапа України", layer: uatopomap },
-        { label: "Мапа України Візіком", layer: VisicomBaseUA },
-        { label: "Мапа України Візіком (сіра)", layer: VisicomUAwb }
+        { label: "Топо карта", layer: uatopomap },
+        { label: "Візіком", layer: VisicomBaseUA },
+        { label: "Візіком (сіра)", layer: VisicomUAwb }
       ]
     },
     // набір "OSM"
