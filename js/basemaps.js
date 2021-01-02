@@ -73,8 +73,8 @@ var baseTree = {
     {
       label: "<b>Україна</b>",
       children: [
-        { label: "Топо карта", layer: uatopomap },
-        { label: "Візіком", layer: VisicomBaseUA },
+        { label: "Топо карта", layer: uatopomap, name: 'OpenStreeMap <b>B&W</b>' },
+        { label: "Візіком", layer: VisicomBaseUA, name: 'OpenStreeMap <b>B&W</b>' },
         { label: "Візіком (сіра)", layer: VisicomUAwb }
       ]
     },
@@ -103,7 +103,7 @@ var baseTree = {
         { label: "TF Transport", layer: ThunderforestTransport },
         { label: "TF Pioneer", layer: ThunderforestPioneer },
         { label: "Акварель", layer: watercolor },
-        { label: "України (без підписів)", layer: VisicomUAbg }
+        { label: "Україна (без підписів)", layer: VisicomUAbg }
       ]
     },
     // набір "Супутникові"
