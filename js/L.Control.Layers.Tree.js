@@ -16,7 +16,7 @@
         options: {
             closedSymbol: '&#8862<b></b>',
             openedSymbol: '&#8863<b></b>',
-            spaceSymbol: ' ',
+            spaceSymbol: '·',
             selectorBack: false,
             namedToggle: false,
             collapseAll: '',
