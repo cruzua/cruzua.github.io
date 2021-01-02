@@ -14,13 +14,13 @@
      */
     L.Control.Layers.Tree = L.Control.Layers.extend({
         options: {
-            closedSymbol: '<b> + </b>',
+            closedSymbol: '<b> &#8862 </b>',
             openedSymbol: '<b> – </b>',
             spaceSymbol: ' ',
             selectorBack: false,
             namedToggle: false,
-            collapseAll: '',
-            expandAll: '',
+            collapseAll: '0',
+            expandAll: '1',
             labelIsSelector: 'both',
         },
 
