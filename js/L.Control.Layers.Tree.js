@@ -14,8 +14,8 @@
      */
     L.Control.Layers.Tree = L.Control.Layers.extend({
         options: {
-            closedSymbol: '<b>&#8862</b>',
-            openedSymbol: '<b>&#8863</b>',
+            closedSymbol: '&#8862<b></b>',
+            openedSymbol: '&#8863<b></b>',
             spaceSymbol: ' ',
             selectorBack: false,
             namedToggle: false,
