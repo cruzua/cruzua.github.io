@@ -93,6 +93,7 @@ var baseTree = {
       children: [
         { label: "Топографічна", layer: opentopomap },
         { label: "4UMaps.com", layer: m4UMaps },
+        { label: "OpenCycleMap", layer: ThunderforestOpenCycleMap },  
         { label: "Мапа України", layer: uatopomap }
       ]
     },
