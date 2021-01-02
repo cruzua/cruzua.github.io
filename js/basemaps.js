@@ -65,37 +65,6 @@ var baseMapsMix = {
     };
 
 
-var baseTree = {
-  label: "<b>БАЗОВА МАПА</b>",
-  noShow: false,
-  children: [
-    {
-      label: "<b>Звичайні</b>",
-      children: [
-        { label: "Мапа України", layer: uatopomap },
-        { label: "OpenStreeMap", layer: osm },
-        { label: "OSM сіра", layer: osmBw },
-        { label: "hike+bike", layer: hikebike },
-        { label: "Топографічна", layer: opentopomap }
-      ]
-    },
-    {
-      label: "<b>Спеціальні</b>",
-      children: [
-        { label: "TF Transport", layer: ThunderforestTransport },
-        { label: "TF Pioneer", layer: ThunderforestPioneer },
-        { label: "Акварель", layer: watercolor }
-      ]
-    },
-    {
-      label: "<b>Супутникові</b>",
-      children: [{ label: "Супутник", layer: MapBoxSatellite }]
-    }
-  ]
-};
-
-
-
 
 
 
