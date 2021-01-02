@@ -64,7 +64,55 @@ var baseMapsMix = {
     "mapy.cz outdoor map": mapy_cz_tour
     };
 
-
+// Leaflet Control Layers Tree
+var baseTree = {
+  label: "<b>БАЗОВА МАПА</b>",
+  noShow: false,
+  children: [
+    // набір "Україна"
+    {
+      label: "<b>Україна</b>",
+      children: [
+        { label: "Мапа України", layer: uatopomap },
+        { label: "Мапа України Візіком", layer: VisicomBaseUA },
+        { label: "Мапа України Візіком (сіра)", layer: VisicomUAwb }
+      ]
+    },
+    // набір "OSM"
+    {
+      label: "<b>OSM</b>",
+      children: [
+        { label: "OpenStreeMap", layer: osm },
+        { label: "OSM сіра", layer: osmBw },
+        { label: "hike+bike", layer: hikebike }
+      ]
+    },
+    // набір "З горизонталями"
+    {
+      label: "<b>З горизонталями</b>",
+      children: [
+        { label: "Топографічна", layer: opentopomap },
+        { label: "4UMaps.com", layer: m4UMaps },
+        { label: "Мапа України", layer: uatopomap }
+      ]
+    },
+    // набір "Спеціальні"
+    {
+      label: "<b>Спеціальні</b>",
+      children: [
+        { label: "TF Transport", layer: ThunderforestTransport },
+        { label: "TF Pioneer", layer: ThunderforestPioneer },
+        { label: "Акварель", layer: watercolor },
+        { label: "України (без підписів)", layer: VisicomUAbg }
+      ]
+    },
+    // набір "Супутникові"
+    {
+      label: "<b>Супутникові</b>",
+      children: [{ label: "Супутник", layer: MapBoxSatellite }]
+    }
+  ]
+};
 
 
 
