@@ -1,5 +1,5 @@
 /* @preserve
- * Leaflet 1.6.0+Detached: bd88f73e8ddb90eb945a28bc1de9eb07f7386118.bd88f73, a JS library for interactive maps. http://leafletjs.com
+ * Leaflet 1.7.1+Detached: 7db94fd1ec23f0967dd8b07a5e2e2b1554b6d8db.7db94fd, a JS library for interactive maps. http://leafletjs.com
  * (c) 2010-2019 Vladimir Agafonkin, (c) 2010-2011 CloudMade
  */
 
@@ -9,7 +9,7 @@
   (factory((global.L = {})));
 }(this, (function (exports) { 'use strict';
 
-  var version = "1.6.0";
+  var version = "1.7.1";
 
   /*
    * @namespace Util
@@ -165,7 +165,7 @@
   	return ((!existingUrl || existingUrl.indexOf('?') === -1) ? '?' : '&') + params.join('&');
   }
 
-  var templateRe = /\{ *([\w_-]+) *\}/g;
+  var templateRe = /\{ *([\w_ -]+) *\}/g;
 
   // @function template(str: String, data: Object): String
   // Simple templating facility, accepts a template string of the form `'Hello {a}, {b}'`
@@ -566,7 +566,7 @@
   	},
 
   	// @method fire(type: String, data?: Object, propagate?: Boolean): this
-  	// Fires an event of the specified type. You can optionally provide an data
+  	// Fires an event of the specified type. You can optionally provide a data
   	// object — the first argument of the listener function will contain its
   	// properties. The event can optionally be propagated to event parents.
   	fire: function (type, data, propagate) {
@@ -4120,11 +4120,11 @@
   		// Pane for `GridLayer`s and `TileLayer`s
   		this.createPane('tilePane');
   		// @pane overlayPane: HTMLElement = 400
-  		// Pane for overlay shadows (e.g. `Marker` shadows)
-  		this.createPane('shadowPane');
-  		// @pane shadowPane: HTMLElement = 500
   		// Pane for vectors (`Path`s, like `Polyline`s and `Polygon`s), `ImageOverlay`s and `VideoOverlay`s
   		this.createPane('overlayPane');
+  		// @pane shadowPane: HTMLElement = 500
+  		// Pane for overlay shadows (e.g. `Marker` shadows)
+  		this.createPane('shadowPane');
   		// @pane markerPane: HTMLElement = 600
   		// Pane for `Icon`s of `Marker`s
   		this.createPane('markerPane');
@@ -4352,7 +4352,7 @@
 
   		var type = e.type;
 
-  		if (type === 'mousedown' || type === 'keypress' || type === 'keyup' || type === 'keydown') {
+  		if (type === 'mousedown') {
   			// prevents outline when clicking on keyboard-focusable element
   			preventOutline(e.target || e.srcElement);
   		}
@@ -5159,7 +5159,7 @@
   		}
   	},
 
-  	// IE7 bugs out if you create a radio dynamically, so you have to do it this hacky way (see http://bit.ly/PqYLBe)
+  	// IE7 bugs out if you create a radio dynamically, so you have to do it this hacky way (see https://stackoverflow.com/a/119079)
   	_createRadioElement: function (name, checked) {
 
   		var radioHtml = '<input type="radio" class="leaflet-control-layers-selector" name="' +
@@ -5366,6 +5366,7 @@
   		link.innerHTML = html;
   		link.href = '#';
   		link.title = title;
+
   		/*
   		 * Will force screen readers like VoiceOver to read this as "Zoom in - button"
   		 */
@@ -5381,15 +5382,15 @@
   	},
 
     _createGauge: function (title, className, container, fn) {
-  		var gauge = create$1('a', className, container);
-  	//	gauge.innerHTML = this._map.getZoom();
-  		gauge.title = title;
+      var gauge = create$1('a', className, container);
+    //	gauge.innerHTML = this._map.getZoom();
+      gauge.title = title;
       gauge.innerHTML = this._map.getZoom();
       this._map.on('zoom zoomend', function(ev){
          gauge.innerHTML = this._map.getZoom();
       }, this);
-  		return gauge;
-  	},
+      return gauge;
+    },
 
   	_updateDisabled: function () {
   		var map = this._map,
@@ -5397,12 +5398,16 @@
 
   		removeClass(this._zoomInButton, className);
   		removeClass(this._zoomOutButton, className);
+  		this._zoomInButton.setAttribute('aria-disabled', 'false');
+  		this._zoomOutButton.setAttribute('aria-disabled', 'false');
 
   		if (this._disabled || map._zoom === map.getMinZoom()) {
   			addClass(this._zoomOutButton, className);
+  			this._zoomOutButton.setAttribute('aria-disabled', 'true');
   		}
   		if (this._disabled || map._zoom === map.getMaxZoom()) {
   			addClass(this._zoomInButton, className);
+  			this._zoomInButton.setAttribute('aria-disabled', 'true');
   		}
   	}
   });
@@ -7067,7 +7072,13 @@
 
   	options: {
   		popupAnchor: [0, 0],
-  		tooltipAnchor: [0, 0]
+  		tooltipAnchor: [0, 0],
+
+  		// @option crossOrigin: Boolean|String = false
+  		// Whether the crossOrigin attribute will be added to the tiles.
+  		// If a String is provided, all tiles will have their crossOrigin attribute set to the String provided. This is needed if you want to access tile pixel data.
+  		// Refer to [CORS Settings](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) for valid String values.
+  		crossOrigin: false
   	},
 
   	initialize: function (options) {
@@ -7099,6 +7110,10 @@
 
   		var img = this._createImg(src, oldIcon && oldIcon.tagName === 'IMG' ? oldIcon : null);
   		this._setIconStyles(img, name);
+
+  		if (this.options.crossOrigin || this.options.crossOrigin === '') {
+  			img.crossOrigin = this.options.crossOrigin === true ? '' : this.options.crossOrigin;
+  		}
 
   		return img;
   	},
@@ -9323,7 +9338,7 @@
 
   		// @option keepAspectRatio: Boolean = true
   		// Whether the video will save aspect ratio after the projection.
-  		// Relevant for supported browsers. Browser compatibility- https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit
+  		// Relevant for supported browsers. See [browser compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)
   		keepAspectRatio: true,
 
   		// @option muted: Boolean = false
@@ -9605,6 +9620,8 @@
   				latlng = layer.getCenter();
   			} else if (layer.getLatLng) {
   				latlng = layer.getLatLng();
+  			} else if (layer.getBounds) {
+  				latlng = layer.getBounds().getCenter();
   			} else {
   				throw new Error('Unable to get source layer LatLng.');
   			}
@@ -11569,7 +11586,7 @@
    * @example
    *
    * ```js
-   * L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'}).addTo(map);
+   * L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
    * ```
    *
    * @section URL template
@@ -12590,10 +12607,12 @@
   			return document.createElement('<lvml:' + name + ' class="lvml">');
   		};
   	} catch (e) {
-  		return function (name) {
-  			return document.createElement('<' + name + ' xmlns="urn:schemas-microsoft.com:vml" class="lvml">');
-  		};
+  		// Do not return fn from catch block so `e` can be garbage collected
+  		// See https://github.com/Leaflet/Leaflet/pull/7279
   	}
+  	return function (name) {
+  		return document.createElement('<' + name + ' xmlns="urn:schemas-microsoft.com:vml" class="lvml">');
+  	};
   })();
 
 
@@ -13729,10 +13748,12 @@
   // @section Interaction Options
   Map.mergeOptions({
   	// @section Touch interaction options
-  	// @option tap: Boolean = true
+  	// @option tap: Boolean
   	// Enables mobile hacks for supporting instant taps (fixing 200ms click
   	// delay on iOS/Android) and touch holds (fired as `contextmenu` events).
-  	tap: true,
+  	// This is legacy option, by default enabled in mobile Safari only
+  	// (because we still need `contextmenu` simulation for iOS).
+  	tap: safari && mobile,
 
   	// @option tapTolerance: Number = 15
   	// The max number of pixels a user can shift his finger during touch
@@ -13845,9 +13866,7 @@
   // @section Handlers
   // @property tap: Handler
   // Mobile touch hacks (quick tap and touch hold) handler.
-  if (touch && (!pointer || safari)) {
-  	Map.addInitHook('addHandler', 'tap', Tap);
-  }
+  Map.addInitHook('addHandler', 'tap', Tap);
 
   /*
    * L.Handler.TouchZoom is used by L.Map to add pinch zoom on supported mobile browsers.
