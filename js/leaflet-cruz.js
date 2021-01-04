@@ -5323,7 +5323,7 @@
 
   		this._zoomInButton  = this._createButton(options.zoomInText, options.zoomInTitle,
   		        zoomName + '-in',  container, this._zoomIn);
-      this._zoomGauge     = this._createGauge(options.zoomInTitle, zoomName, container, this._zoomGauge);
+      this._zoomGauge     = this._createGauge(options.zoomInTitle, zoomName + 'Gauge', container, this._zoomGauge);
   		this._zoomOutButton = this._createButton(options.zoomOutText, options.zoomOutTitle,
   		        zoomName + '-out', container, this._zoomOut);
 
