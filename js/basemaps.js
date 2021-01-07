@@ -29,11 +29,11 @@ var VisicomBaseUA = L.tileLayer(VisicomUrl, {map: 'world,ua', style: 'base', att
     VisicomUAbg = L.tileLayer(VisicomUrl, {map: 'world,ua', style: 'base_background', attribution: VisicomAttr, subdomains: "123", maxZoom: 19, tms: true}), // без підписів
     VisicomUAsing = L.tileLayer(VisicomUrl, {map: 'world,ua', style: 'base_sign', attribution: VisicomAttr, subdomains: "123", maxZoom: 19, tms: true}); // підписи
 
-
 // OpenStreetMap
 var osm = L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: vpAttr + ' | Map data © OpenStreetMap contributors'}),
-    osmGPS = L.tileLayer('https://{s}.gps-tile.openstreetmap.org/lines/{z}/{x}/{y}.png', {attribution: '<a href="https://www.openstreetmap.org/#&layers=G">' + 'OpenStreetMap public GPS traces</a>'}),
-    osmBw = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {attribution: vpAttr + ' | Map data © OpenStreetMap contributors'});
+    carto = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {attribution: vpAttr + ' | Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attribution">CARTO</a>'}),
+    osmBw = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {attribution: vpAttr + ' | Map data © OpenStreetMap contributors'}),
+    osmGPS = L.tileLayer('https://{s}.gps-tile.openstreetmap.org/lines/{z}/{x}/{y}.png', {attribution: '<a href="https://www.openstreetmap.org/#&layers=G">' + 'OpenStreetMap public GPS traces</a>'});
 
 // набір карт з горизонталями
 var uatopomap = L.tileLayer('https://dgm.gki.com.ua/map/rtile/carto_2012332222387848919/ua/{z}/{x}/{y}.png', {attribution: vpAttr + ' | Maps © <a href="https://gki.com.ua/">Науково-дослідний інститут геодезії і картографії</a> CC-BY-SA</a>)'}),
@@ -84,6 +84,7 @@ var baseTree = {
       children: [
         { label: "OpenStreeMap", layer: osm },
         { label: "OSM сіра", layer: osmBw },
+        { label: "OSM CARTO", layer: carto }, 
         { label: "hike+bike", layer: hikebike }
       ]
     },
