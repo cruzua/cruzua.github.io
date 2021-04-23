@@ -29,6 +29,7 @@ var VisicomBaseUA = L.tileLayer(VisicomUrl, {map: 'world,ua', style: 'base', att
     VisicomUAbg = L.tileLayer(VisicomUrl, {map: 'world,ua', style: 'base_background', attribution: VisicomAttr, subdomains: "123", maxZoom: 19, tms: true}), // без підписів
     VisicomUAsing = L.tileLayer(VisicomUrl, {map: 'world,ua', style: 'base_sign', attribution: VisicomAttr, subdomains: "123", maxZoom: 19, tms: true}); // підписи
 
+
 // OpenStreetMap
 var osm = L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: vpAttr + ' | Map data © OpenStreetMap contributors'}),
     carto = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {attribution: vpAttr + ' | Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attribution">CARTO</a>'}),
@@ -52,17 +53,40 @@ var MapBoxSatellite = L.tileLayer('https://api.tiles.mapbox.com/v4/mapbox.satell
 // набір карт MIX
 var baseMapsMix = {
 //   "<span style='color: gray'>Сіра</span>": MapBoxGrayscale,
+// набір "Україна"
     "Мапа України": uatopomap,
-    "VisicomBaseUA": VisicomBaseUA,
-    "VisicomUAwb": VisicomUAwb,
-    "Супутник": MapBoxSatellite,
-//    "Outdoors": MapBoxOutdoors,
+    "Візіком": VisicomBaseUA,
+    "Візіком (сіра)": VisicomUAwb,
+  // набір "OSM"
+    "OpenStreeMap": osm,
+    "OSM сіра": osmBw,
+    "OSM CARTO": carto,
+    "hike+bike": hikebike,
+// набір "З горизонталями"
+    "Топографічна": opentopomap,
+    "4UMaps.com": m4UMaps,
+    "OpenCycleMap": ThunderforestOpenCycleMap,
+    "Мапа України": uatopomap,
+// набір "Спеціальні"
+    "TF Transport": ThunderforestTransport,
     "TF Pioneer": ThunderforestPioneer,
     "Акварель": watercolor,
-    "hikebike": hikebike,
-    "Топографічна": opentopomap,
-    "mapy.cz outdoor map": mapy_cz_tour
+    "Україна (без підписів)": VisicomUAbg,
+    "mapy.cz outdoor map": mapy_cz_tour,
+// набір "Супутникові"
+    "Супутник": MapBoxSatellite,
     };
+
+// набір карт MIX
+var baseMaps_1709 = {
+    "Мапа України": uatopomap,
+    "Візіком (сіра)": VisicomUAwb,
+    "TF Pioneer": ThunderforestPioneer,
+    "Акварель": watercolor,
+    "Топографічна": opentopomap,
+    "Супутник": MapBoxSatellite
+    };
+
 
 // Leaflet Control Layers Tree
 var baseTree = {
@@ -73,8 +97,8 @@ var baseTree = {
     {
       label: "<b>Україна</b>",
       children: [
-        { label: "Топо карта", layer: uatopomap, name: 'OpenStreeMap <b>B&W</b>' },
-        { label: "Візіком", layer: VisicomBaseUA, name: 'OpenStreeMap <b>B&W</b>' },
+        { label: "Топо карта", layer: uatopomap },
+        { label: "Візіком", layer: VisicomBaseUA },
         { label: "Візіком (сіра)", layer: VisicomUAwb }
       ]
     },
@@ -84,7 +108,7 @@ var baseTree = {
       children: [
         { label: "OpenStreeMap", layer: osm },
         { label: "OSM сіра", layer: osmBw },
-        { label: "OSM CARTO", layer: carto }, 
+        { label: "OSM CARTO", layer: carto },
         { label: "hike+bike", layer: hikebike }
       ]
     },
@@ -94,7 +118,7 @@ var baseTree = {
       children: [
         { label: "Топографічна", layer: opentopomap },
         { label: "4UMaps.com", layer: m4UMaps },
-        { label: "OpenCycleMap", layer: ThunderforestOpenCycleMap },  
+        { label: "OpenCycleMap", layer: ThunderforestOpenCycleMap },
         { label: "Мапа України", layer: uatopomap }
       ]
     },
@@ -115,6 +139,8 @@ var baseTree = {
     }
   ]
 };
+
+
 
 
 
