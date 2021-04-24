@@ -1,4 +1,4 @@
-var vpAttr1 = '<nav class="navbar navbar-expand-lg d-inline-flex p-0"><div class="d-inline-flex"><a class="navbar-toggler p-0" style = "font-size: 0.75rem; line-height: 1.2;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAttr" aria-controls="navbarTitle_page" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-arrows-alt-h"></i></a><div class="collapse navbar-collapse" id="navbarAttr"><span class="ps-1">2021 <a href="http://www.velopoltava.org">ГО «ВелоПолтава»</a>',
+var vpAttr1 = '<nav class="navbar navbar-expand-lg d-inline-flex p-0"><div class="d-inline-flex"><a class="navbar-toggler p-0" style = "font-size: 0.75rem; line-height: 1;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAttr" aria-controls="navbarTitle_page" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-arrows-alt-h"></i></a><div class="collapse navbar-collapse" id="navbarAttr"><span class="ps-1">2021 <a href="http://www.velopoltava.org">ГО «ВелоПолтава»</a>',
     vpAttr2 = '</span></div></div></nav>';
 
 // набір карт www.thunderforest.com
