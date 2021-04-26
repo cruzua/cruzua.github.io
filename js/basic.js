@@ -24,11 +24,11 @@ var i, header_class;
   }
 }
 // W3Schools Accordion
-var acc = document.getElementsByClassName("W3Sch_Acc");
+var acc = document.getElementsByClassName("W3Sch_Acc_btn");
 var i;
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function () {
-    this.classList.toggle("W3Sch_Acc_active");
+    this.classList.toggle("W3Sch_Acc_btn_active");
     var panel = this.nextElementSibling;
     if (panel.style.maxHeight) {
       panel.style.maxHeight = null;
