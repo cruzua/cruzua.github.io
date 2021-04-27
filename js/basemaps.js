@@ -51,35 +51,35 @@ var hikebike = L.tileLayer('http://toolserver.org/tiles/hikebike/{z}/{x}/{y}.png
 var MapBoxSatellite = L.tileLayer('https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidmVsb3BvbHRhdmEiLCJhIjoiY2tmeG1pcGh6MXM0ejJ6c3ZheG4yM3R2aCJ9.cO3Um57gnX9eGqA9kLT7Ug', {ver: '4', id: 'mapbox.satellite', attribution: vpAttr1 + ' | Imagery © <a href="https://www.mapbox.com/">Mapbox</a>' + vpAttr2});
 
 
-// набір карт MIX
-var baseMapsMix = {
-//   "<span style='color: gray'>Сіра</span>": MapBoxGrayscale,
-// набір "Україна"
-    "Мапа України": uatopomap,
-    "Візіком": VisicomBaseUA,
-    "Візіком (сіра)": VisicomUAwb,
-  // набір "OSM"
-    "OpenStreeMap": osm,
-    "OSM сіра": osmBw,
-    "OSM CARTO": carto,
-    "hike+bike": hikebike,
-// набір "З горизонталями"
-    "Топографічна": opentopomap,
-    "4UMaps.com": m4UMaps,
-    "OpenCycleMap": ThunderforestOpenCycleMap,
-    "Мапа України": uatopomap,
-// набір "Спеціальні"
-    "TF Transport": ThunderforestTransport,
-    "TF Pioneer": ThunderforestPioneer,
-    "Акварель": watercolor,
-    "Україна (без підписів)": VisicomUAbg,
-    "mapy.cz outdoor map": mapy_cz_tour,
-// набір "Супутникові"
-    "Супутник": MapBoxSatellite,
-    };
+    // набір карт set A
+    var baseMaps_set_a = {
+    //   "<span style='color: gray'>Сіра</span>": MapBoxGrayscale,
+    // набір "Україна"
+    //    "Мапа України": uatopomap,
+        "Візіком": VisicomBaseUA,
+        "Візіком (сіра)": VisicomUAwb,
+      // набір "OSM"
+        "OpenStreeMap": osm,
+        "OSM сіра": osmBw,
+        "OSM CARTO": carto,
+  //      "hike+bike": hikebike,
+    // набір "З горизонталями"
+        "Топографічна": opentopomap,
+  //      "4UMaps.com": m4UMaps,
+  //      "OpenCycleMap": ThunderforestOpenCycleMap,
+  //      "Мапа України": uatopomap,
+    // набір "Спеціальні"
+  //      "TF Transport": ThunderforestTransport,
+        "TF Pioneer": ThunderforestPioneer,
+//        "Акварель": watercolor,
+        "Україна (без підписів)": VisicomUAbg,
+//        "mapy.cz outdoor map": mapy_cz_tour,
+    // набір "Супутникові"
+        "Супутник": MapBoxSatellite,
+        };
 
-// набір карт MIX
-var baseMaps_1709 = {
+// набір карт MIX B
+var baseMaps_set_b = {
     "Мапа України": uatopomap,
     "Візіком (сіра)": VisicomUAwb,
     "TF Pioneer": ThunderforestPioneer,
