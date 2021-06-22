@@ -1,3 +1,40 @@
+function create_el(el_tag, el_class, el_id, app_child) {
+  var el;
+  if (el_tag !== undefined) el = document.createElement(el_tag);
+  if (el_id !== undefined && el_id !== null ) el.setAttribute("id", el_id);
+  if (el_class !== undefined && el_class !== null) el.setAttribute("class", el_class);
+  if (app_child) {app_child.appendChild(el);}
+  return el;
+}
+
+function create_img(img_src, img_width, img_height, img_alt) {
+  var el_img = document.createElement("img");
+      el_img.setAttribute("src", img_src);
+      if (img_width !== undefined && img_width !== null ) el_img.setAttribute("width", img_width);
+      if (img_height !== undefined && img_height !== null ) el_img.setAttribute("height", img_height);
+      if (img_alt !== undefined && img_alt !== null ) el_img.setAttribute("alt", img_alt);
+      //document.body.appendChild(el_img);
+  return el_img;
+}
+
+function create_a(a_href, a_html, a_title) {
+  var el_a = document.createElement("a");
+      el_a.setAttribute("href", a_href);
+      if (a_title !== undefined && a_title !== null ) el_a.setAttribute("title", a_title);
+      el_a.setAttribute("target", "_blank");
+      if (a_html !== undefined && a_html !== null ) el_a.innerHTML = a_html;
+      //document.body.appendChild(el_a);
+  return el_a;
+}
+
+function addClassName(getClass, addClass) {
+  var arr = document.getElementsByClassName(getClass);
+  for (var i = 0; i < arr.length; i++) {
+    arr[i].className = arr[i].className += addClass;
+  }
+}
+
+
 // Shrink Navbar on Scroll
 window.onscroll = function () {  scrollFunction(); };
 
