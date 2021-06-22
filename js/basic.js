@@ -34,6 +34,13 @@ function addClassName(getClass, addClass) {
   }
 }
 
+function fn_toggle(tgl_el, tgl_icon, tgl_class) {
+  var elToggle = document.getElementById(tgl_el);
+  var iconToggle = document.getElementById(tgl_icon);
+      iconToggle.addEventListener("click", function () {
+        elToggle.classList.toggle(tgl_class);
+  });
+}
 
 // Shrink Navbar on Scroll
 window.onscroll = function () {  scrollFunction(); };
