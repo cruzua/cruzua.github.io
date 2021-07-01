@@ -1,5 +1,5 @@
-var vpAttr1 = '<nav class="navbar navbar-expand-lg d-inline-flex p-0"><div class="d-inline-flex"><a class="navbar-toggler p-0" style = "font-size: 0.75rem; line-height: 1; border: 0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAttr" aria-controls="navbarTitle_page" aria-expanded="false" aria-label="Toggle navigation">⇔</a><div class="collapse navbar-collapse" id="navbarAttr"><span class="ps-1">2021 <a href="http://www.velopoltava.org">ГО «ВелоПолтава»</a>',
-    vpAttr2 = '</span></div></div></nav>';
+var vpAttr1 = '<div class="copy-pg" id="copy-pg-id"><a id="copy-pg-icon">⇔</a><span> 2021 <a href="http://www.velopoltava.org">ГО «ВелоПолтава»</a>',
+    vpAttr2 = '</span></div>';
 
 // набір карт www.thunderforest.com
 var ThunderforestUrl = 'https://tile.thunderforest.com/{id}/{z}/{x}/{y}.png?apikey=9bf46b3f55ae48059ee52fdfeb14e0b1',
