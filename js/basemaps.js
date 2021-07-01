@@ -1,4 +1,4 @@
-var vpAttr1 = '<div class="copy-pg" id="copy-pg-id"><a id="copy-pg-icon">⇔</a><span> 2021 <a href="http://www.velopoltava.org">ГО «ВелоПолтава»</a>',
+var vpAttr1 = '<div class="copy-pg" id="copy-pg-id"><a id="copy-pg-icon">⇔</a><span><a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | 2021 <a href="http://www.velopoltava.org">ГО «ВелоПолтава»</a>',
     vpAttr2 = '</span></div>';
 
 // набір карт www.thunderforest.com
