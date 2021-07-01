@@ -6,6 +6,14 @@ var urlwiki = "https://uk.wikipedia.org/wiki/",
           'Вікові та меморіальні дерева Полтавщини',
           'Активний туризм і відпочинок на Полтавщині'
           ];
+
+function styleDivIcons(feature) { // вибір іконок svg з style.js
+ 	return {icon: L.divIcon({
+		   		 iconSize: [32, 32], // also can be set through CSS
+					 html: svg_icon(feature)})
+	}
+};
+
 function wiki_photo_fn(feature, first) {
     // додаткові фото з wikimedia
 
