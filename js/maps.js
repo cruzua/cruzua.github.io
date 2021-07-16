@@ -47,7 +47,7 @@ var div_tab_links = create_el("div", "tabs-links", null, div_poi_popup),
 
 // побудова tablinks & tabcontent A
 var btn_tab_a = create_el("button", "tablinks w3-theme-d2", null, div_tab_links);
-    btn_tab_a.setAttribute("onclick", "openTab(event, 'tab-a')");
+    btn_tab_a.setAttribute("onclick", "openTab('tab-a')");
     btn_tab_a.innerHTML = "фото";
 var div_tab_a = create_el("div", "tabcontent", "tab-a", div_tab_content);
 if (feature.properties.wiki_photo == null) {
@@ -59,7 +59,7 @@ if (feature.properties.wiki_photo == null) {
 // побудова tablinks & tabcontent B
 if (feature.properties.poi_opys !== null) {
   var btn_tab_b = create_el("button", "tablinks", "tabactive", div_tab_links);
-    btn_tab_b.setAttribute("onclick", "openTab(event, 'tab-b')");
+    btn_tab_b.setAttribute("onclick", "openTab('tab-b')");
     btn_tab_b.innerHTML = "опис";
 var div_tab_b = create_el("div", "tabcontent", "tab-b", div_tab_content);
   if (feature.properties.poi_opys !== null) div_tab_b.innerHTML = feature.properties.poi_opys;
@@ -70,7 +70,7 @@ var div_tab_b = create_el("div", "tabcontent", "tab-b", div_tab_content);
 // побудова tablinks & tabcontent C
 if (feature.properties.cmt !== null) {
   var btn_tab_с = create_el("button", "tablinks", null, div_tab_links);
-    btn_tab_с.setAttribute("onclick", "openTab(event, 'tab-c')");
+    btn_tab_с.setAttribute("onclick", "openTab('tab-c')");
     btn_tab_с.innerHTML = "cmt";
   var div_tab_c = create_el("div", "tabcontent", "tab-c", div_tab_content);
     div_tab_c.innerHTML = feature.properties.cmt;
@@ -80,7 +80,7 @@ if (feature.properties.cmt !== null) {
 if (feature.properties.wiki_photo !== null) {
   if (feature.properties.wiki_photo.split(',').length > 1) {
     var btn_tab_d = create_el("button", "tablinks", null, div_tab_links);
-      btn_tab_d.setAttribute("onclick", "openTab(event, 'tab-d')");
+      btn_tab_d.setAttribute("onclick", "openTab('tab-d')");
       btn_tab_d.innerHTML = "фото +";
     var div_tab_d = create_el("div", "tabcontent", "tab-d", div_tab_content);
       div_tab_d.innerHTML = wiki_photo_fn(feature).outerHTML;
