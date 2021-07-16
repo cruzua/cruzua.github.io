@@ -34,12 +34,27 @@ function addClassName(getClass, addClass) {
   }
 }
 
-function fn_toggle(tgl_el, tgl_icon, tgl_class) {
+function fn_toggle(tgl_btn, tgl_el, tgl_el_class, tgl_btn_active) {
+  var btnToggle = document.getElementById(tgl_btn);
   var elToggle = document.getElementById(tgl_el);
-  var iconToggle = document.getElementById(tgl_icon);
-      iconToggle.addEventListener("click", function () {
-        elToggle.classList.toggle(tgl_class);
+  btnToggle.addEventListener("click", function () {
+    btnToggle.classList.toggle(tgl_btn_active);
+    elToggle.classList.toggle(tgl_el_class);
   });
+}
+
+function openTab(tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-theme-d2", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  event.currentTarget.className += " w3-theme-d2";
 }
 
 // Shrink Navbar on Scroll
