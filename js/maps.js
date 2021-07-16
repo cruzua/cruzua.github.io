@@ -66,7 +66,6 @@ var div_tab_b = create_el("div", "tabcontent", "tab-b", div_tab_content);
   //div_tab_b.innerHTML = wiki_photo_fn(feature);
   div_tab_b.setAttribute("style", "display: none;");}
 
-
 // побудова tablinks & tabcontent C
 if (feature.properties.cmt !== null) {
   var btn_tab_с = create_el("button", "tablinks", null, div_tab_links);
