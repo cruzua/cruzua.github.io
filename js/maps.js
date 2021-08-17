@@ -14,6 +14,18 @@ function styleDivIcons(feature) { // вибір іконок svg з style.js
 	}
 };
 
+function obxvat(feature) { // Побудова таблиці з результатми обміру дубів
+  if (feature.properties.poi_dt_old !== null) {
+    var obxvat_tr = '',
+        obxvat_arr = feature.properties.poi_dt_old.split(',');
+            for (var i=0; i < obxvat_arr.length; i++) {
+                var obxvat_el = obxvat_arr[i].split('/');
+                obxvat_tr += ('<tr><td>' + obxvat_el[0] + '</td><td>' + obxvat_el[1] + '</td></tr>' );}
+    var table_obxvat = '<p><i>Обмір окружності стовбура дерева проводився на висоті 130 см від рівня землі.</i></p><table class="table table-sm"><thead><tr><th scope="col">Обхват (см)</th><th scope="col">Дата</th></tr></thead><tbody>' + 	obxvat_tr + '</tbody></table>';
+    return table_obxvat
+  } else {return ''}
+}
+
 function wiki_photo_fn(feature, first) {
     // додаткові фото з wikimedia
 
@@ -36,6 +48,20 @@ function wiki_photo_fn(feature, first) {
           //alert (wi_ph_gl.childNodes);
         } }
       } return wi_ph_gl; } else { return ""; }
+}
+
+function poiPopUp(str) {
+//alert(str);
+  if (str == "") {
+    document.getElementById("tab-c").innerHTML = "";
+    return;
+  }
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("tab-c").innerHTML = this.responseText;
+  }
+  xhttp.open("GET", "mysqlpoi.php?q="+str);
+  xhttp.send();
 }
 
 function popUp(feature, layer) {
@@ -66,7 +92,7 @@ var div_tab_b = create_el("div", "tabcontent", "tab-b", div_tab_content);
   //div_tab_b.innerHTML = wiki_photo_fn(feature);
   div_tab_b.setAttribute("style", "display: none;");}
 
-// побудова tablinks & tabcontent C
+//побудова tablinks & tabcontent C
 if (feature.properties.cmt !== null) {
   var btn_tab_с = create_el("button", "tablinks", null, div_tab_links);
     btn_tab_с.setAttribute("onclick", "openTab('tab-c')");
