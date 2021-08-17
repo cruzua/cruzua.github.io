@@ -3,7 +3,7 @@ function styleDivIcons(feature) { // вибір іконок svg з style.js
 		   		 iconSize: [32, 32], // also can be set through CSS
 					 html: svg_icon(feature)})
 	}
-};
+}
 
 function style_line_group(feature) {
     switch(String(feature.properties['line_group'])) {
