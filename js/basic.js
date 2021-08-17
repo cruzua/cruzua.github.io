@@ -43,45 +43,22 @@ function fn_toggle(tgl_btn, tgl_el, tgl_el_class, tgl_btn_active) {
   });
 }
 
-function openTab(tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" w3-theme-d2", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  event.currentTarget.className += " w3-theme-d2";
-}
-
-// Shrink Navbar on Scroll
-window.onscroll = function () {  scrollFunction(); };
-
-function scrollFunction() {
-var i, header_class;
-  if ( document.body.scrollTop > 150 || document.documentElement.scrollTop > 150 ) {
-    header_class = document.getElementsByClassName("header-bg-none");
-  for (i = 0; i < header_class.length; i++) {
-    header_class[i].className = header_class[i].className.replace( "header-bg-none", "header-bg" );
-  }
-    document.getElementById("navbar-hide").style.display = "none";
-    document.getElementById("navbar-hide").style.transition = "0.3s";
-    document.getElementById("Logo_MP").style.height = "3em";
+function fn_sticky() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.remove("sticky-n");
+    navbar.classList.add("sticky-y");
+    navbar.classList.add("w3-theme-d2");
+    document.getElementById("Logo_MP").style.height = "48px";
     document.getElementById("Logo_MP").style.transition = "0.3s";
   } else {
-    header_class = document.getElementsByClassName("header-bg");
-  for (i = 0; i < header_class.length; i++) {
-    header_class[i].className = header_class[i].className.replace( "header-bg", "header-bg-none" );
-  }
-    document.getElementById("navbar-hide").style.display = "inherit";
-    document.getElementById("navbar-hide").style.transition = "0.3s";
-    document.getElementById("Logo_MP").style.height = "4em";
+    navbar.classList.remove("sticky-y");
+    navbar.classList.remove("w3-theme-d2");
+    navbar.classList.add("sticky-n");
+    document.getElementById("Logo_MP").style.height = "64px";
     document.getElementById("Logo_MP").style.transition = "0.3s";
   }
 }
+
 // W3Schools Accordion
 var acc = document.getElementsByClassName("W3Sch_Acc_btn");
 var i;
@@ -95,4 +72,18 @@ for (i = 0; i < acc.length; i++) {
       panel.style.maxHeight = panel.scrollHeight + "em";
     }
   });
+}
+
+function openTab(tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-theme-d2", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  event.currentTarget.className += " w3-theme-d2";
 }
